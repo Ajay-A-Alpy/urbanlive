@@ -1,0 +1,251 @@
+<!-- partial -->
+<div class="container-fluid page-body-wrapper">
+  <!-- partial:partials/_sidebar.html -->
+  <nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      
+      <li class="nav-item bg-dark">
+        <a class="nav-link" href="index.html">
+        
+          <span class="menu-title text-warning">Dashboard</span>
+        </a>
+      </li>
+   
+      <li class="nav-item bg-dark  text-center">
+        <a class="nav-link" href="/admin/view-products">
+       
+          <span class="menu-title fw-bold ms-3">Products</span>
+        </a>
+      </li>
+      <li class="nav-item bg-dark">
+        <a class="nav-link" href="/admin/category">
+          <i class="ti-layout-list-post menu-icon"></i>
+          <span class="menu-title fw-bold">Categories</span>
+        </a>
+      </li>
+      <li class="nav-item bg-dark">
+        <a class="nav-link" href="/admin/coupens">
+          <i class="ti-pie-chart menu-icon"></i>
+          <span class="menu-title fw-bold">Coupon Zone</span>
+        </a>
+      </li>
+
+      <li class="nav-item bg-dark">
+        <a class="nav-link" href="/admin/referal-offer">
+          <i class="ti-pie-chart menu-icon"></i>
+          <span class="menu-title fw-bold">Referal Offers</span>
+        </a>
+      </li>
+
+      <li class="nav-item bg-dark">
+        <a class="nav-link" href="/admin/view-orders">
+          <i class="ti-star menu-icon"></i>
+          <span class="menu-title fw-bold">Orders</span>
+        </a>
+      </li>
+
+      <li class="nav-item bg-dark">
+        <a class="nav-link" href="/admin/view-users">
+          <i class="ti-star menu-icon"></i>
+          <span class="menu-title fw-bold">Users</span>
+        </a>
+      </li>
+    
+      <li class="nav-item bg-danger">
+        <a class="nav-link text-danger" href="/admin/logout">
+          <i class="ti-write menu-icon"></i>
+          <span class="menu-title text-dark fw-bold">Logout <i class="bi bi-power text-dark" style="font-size:1rem ;"></i></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- partial -->
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h4 class="font-weight-bold mb-0 text-dark bg-white btn">WELCOME ADMIN</h4>
+            </div>
+            <div>
+              <a href="/admin/view-reports" class="btn btn-primary"> Reports</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title text-md-center text-xl-left ">Products</p>
+              <div
+                class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-center">{{productNos}} Nos</h3>
+              <i class="bi bi-bag w-50 bi-3x"style="font-size:2rem ;"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title text-md-center text-xl-left">Sales</p>
+              <div
+                class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 rupees">₹{{totalSale}}</h3>
+              <i class="bi bi-wallet2" style="font-size:2rem ;"></i>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title text-md-center text-xl-left">Category</p>
+              <div
+                class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{categoryNos}} Nos</h3>
+              <i class="bi bi-tags-fill"style="font-size:2rem ;"></i>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title text-md-center text-xl-left">Users</p>
+              <div
+                class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{userNos}} Nos</h3>
+               <i class="bi bi-people-fill"style="font-size:2rem ;"></i>
+              </div>
+         
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-6 grid-margin stretch-card h-50">
+          <div class="card">
+            <div class="card-body text-center">
+              <p class="card-title fs-2 text-dark">TOP PRODUCT <i class="bi bi-trophy-fill"style="font-size:2rem ;"></i></p>
+
+              <div class="card shadow rounded  w-50 mx-auto ">
+                <a href="/item-view/{{top1._id}}">
+                  <img src="/product-images/{{top1._id}}.jpg" class="card-img-top img-fluid " alt="plant "></a>
+                <div class="card-body" style="overflow:hidden; word-wrap:break-word">
+                  <h5 class="card-title">{{top1.pname}}</h5>
+                  <span class="card-title"> Rs.{{top1.price}}</span>
+                  <p class="card-text fw-normal"> {{top1.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6 stretch-card">
+          <div class="card border-bottom-0 h-75">
+                        <h5 class="text-white text-center bg-secondary">NUMBER OF TRANSACTIONS</h5>
+            <div style="width:35rem; height: 38rem;" class="text-center">
+              <canvas id="myChart"></canvas>
+            </div>
+ 
+            <input type="number" value="{{online.count}}" id="razor" hidden>
+            <input type="number" value="{{cod.count}}" id="cod" hidden>
+            <input type="number" value="{{paypal.count}}" id="paypal" hidden>
+
+            <input type="number" value="{{onlineAm.total}}" id="razorAm" hidden>
+            <input type="number" value="{{codAm.total}}" id="codAm" hidden>
+            <input type="number" value="{{paypalAm.total}}" id="paypalAm" hidden>
+          </div>
+        </div>
+      </div>
+      <div class="row m-0">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title mb-0 fs-4 py-3 text-start">TOP SALED PRODUCTS </p>
+              <div class="table-responsive">
+                <table class="table table-hover text-center">
+                  <thead>
+                    <tr class="bg-info">
+                      <th>No</th>
+                      <th>Product Name</th>
+                      <th>Saled Qty</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each topprd}}
+                    <tr>
+                      <th scope="row">{{counter @index}}</th>
+                      <td>{{this._id}}</td>
+                      <td>{{this.count}}</td>
+                    </tr>
+                    {{/each }}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 grid-margin stretch-card">
+        </div>
+
+      </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card " >
+             <div   class="text-center p-5"> 
+                 <h5 class="text-white text-center bg-secondary"> TOTAL SALE AMOUNT - PAYMENT TYPE WISE</h5>
+              <canvas id="myChart2"></canvas>
+            </div>
+
+            <div class="container">
+            <h5 class="text-white text-center bg-secondary">VIEW REPORTS</h5>
+        <div class="row ">
+ 
+            <div class="col-md-4 fs-5 col-12  report">
+              <a href="/admin/weekly-report" class="text btn btn-info">WEEKLY  REPORT</a>  
+            </div>
+
+            <div class="col-md-4 fs-5 col-12  report">
+            <a href="/admin/monthly-report" class="text btn btn-info" >MONTHLY  REPORT</a> 
+            </div>
+
+               <div class="col-md-4 fs-5 col-12 report">
+             <a href="/admin/yearly-report" class="text btn btn-info">  YEARLY REPORT</a>
+            </div>
+        </div>
+        </div>
+    </div>
+          </div>
+
+    </div>
+  </div>
+</div>
+          
+    
+    
+   
+   
+
+
+    </div>
+
+
+    
+
+  </div>
+
+</div>
+<div class="bg-info">
+.
+    </div>
+
+</div>
+

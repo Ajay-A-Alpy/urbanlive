@@ -1,0 +1,121 @@
+
+{{>user-header}}
+
+
+<section>
+    <div class="container p-5" style="background-color: rgb(229, 241, 241);">
+        <div class="row mt-5 gap-2 ">
+        
+<div class="col-md-6 login  " style="background-color: rgb(173, 163, 151);">
+<h3 class="address mt-2 text-center">Delivery Address</h3>
+
+ <form method="post" id="checkout-form">
+
+     {{#each addresslist}}
+   <div class="">
+  <div class="input-group-text p-1">
+    <input class="form-check-input mt-0" name="addressId" class="addressId" type="checkbox" value="{{this._id}}" aria-label="Checkbox for following text input">
+   
+  </div>
+
+   <p class="text-dark fw-normal fs-5  address p-1">{{this.name}},<br>{{this.address}}, <br>{{this.city}}<br>{{this.state}},{{this.pincode}},{{this.landmark}}</p>
+<a href="/delete-address/{{this._id}}" class="btn btn-sm btn-danger mb-2 mt-0"> Delete</a>
+</div>
+{{/each}}
+
+<a href="/add-address" class="btn btn-success btn-sm"  >Add new address</a>
+
+
+<div class="h-85 w-75 border border-0 mt-2 ms-4 p-3 text-start">
+  
+    <h4 class="mt-2 fs-5 fw-bold" style="background-color: burlywood;"> CHOOSE A PAYMENT METHOD</h6>
+
+<div class="form-check border-2 border border-white p-1" >
+  <input class="form-check-input" type="radio" name="payment-method" value="COD" id="" checked>
+  <label class="form-check-label" for="flexRadioDefault1">
+   C.O.D
+  </label>
+</div>
+<div class="form-check  border-2 border border-white p-1">
+  <input class="form-check-input" type="radio" name="payment-method" value="ONLINE" >
+  <label class="form-check-label" for="flexRadioDefault2">
+ Razorpay Online Payment
+  </label>
+</div>
+
+<div class="form-check  border-2 border border-white p-1">
+  <input class="form-check-input" type="radio" name="payment-method" value="PAYPAL" >
+  <label class="form-check-label" for="flexRadioDefault2">
+Paypal Online Payment
+  </label>
+</div>
+
+
+</div>
+</div> 
+
+
+
+
+
+
+
+
+
+<div class="col-md-4  vh-75 px-2 mx-5 h-100 " style="background-color: rgb(235, 220, 231); height:20rem">
+
+
+
+
+
+
+ <div class="border border-4 ">
+     <h2 class="fs-5 fw-bold text-center mb-3"><u>100% SECURE PAYMENTS</u> </h2>
+
+       <div class="fs-5 me-3 w-75 ">Sub Total <span class="fs-5 " style="">{{#if cartCount}} <span class="text-end w-25 ms-4 rupees" >:₹ {{total}}</span>{{/if}} </div> 
+          <div class="fs-5 me-3 w-75 ">Discount<span class="fs-5" style="">{{#if cartCount}} <span class="text-end w-25 ms-4 rupees text-danger">:{{#if discountVal}} ₹-{{discountVal}}{{/if}}</span>{{/if}}</div>
+       {{#if coupenDisc}}    <div class="fs-5  w-100 text-success bg-white ">Coupen offer<span class="fs-5" style=""> <span class="text-end w-25  rupees text-danger">: ₹-{{coupenDisc}}</span></div>{{/if}}
+          <div class="border-bottom border-dark mt-1 mb-1"></div>
+         
+           <div class="fs-5 me-3  w-100">Order Total<span class="fs-4 " style=""> <span class="text-end w-25 ms-4 rupees">:{{#if cartCount}} ₹{{orderFinal}}</span> {{/if}}   </div>
+         <div class="text-center rupees text-success fs-5">
+{{#if referalDisc}} -{{referalDisc}} ₹ Off  Applied{{/if}}
+         </div>   
+
+<div class="text-center">
+<button type="submit" class="btn fs-6  mt-5 fw-bold " id="checkBtn" style="width: 10vw;  background-color:orange  ">check-out</button>
+</div>
+
+
+ </div>
+
+</form>
+
+
+<div class=" shadow text-center " style="background-color: rgb(118, 136, 136); p-4 ">
+  <form method="post" id="coupen-form" action="/coupen-check">
+<label for="" class="ms-2 text-white">ENTER COUPEN CODE</label>
+<h6 class="text-center text-danger bg-white">   {{coupenMsg}}</h6>
+<h6 class="text-center text-success bg-white">   {{coupenMsgSuccess}}</h6>
+<input type="text" name="userCoupen" id="usercode" class="form-control">
+<button class="btn btn-primary">ENTER</button>
+</form>
+</div>
+
+{{#if referalMsg}}
+<div class="my-2 text-center">
+<h4 class="fs-6 text-success"> You are eligible for Referal discount  ! click below to Apply Now</h4>
+ <a href="" class="btn btn-success btn-sm mx-auto" onclick="applyOffer()">Apply</a>
+</div>
+{{/if}}
+
+</div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+

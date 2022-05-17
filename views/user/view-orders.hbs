@@ -1,0 +1,66 @@
+
+{{>user-header}}
+
+<section>
+    <div class="container">
+        <div class="row">
+
+         
+            <div class="">
+<table class="table table-white table-striped  mt-4 table-hover" id="myTable">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Date</th>
+      <th scope="col">Address</th>
+      <th scope="col">Pincode</th>
+       <th scope="col">mobile</th>
+       <th scope="col">Amount</th>
+        <th scope="col">payment</th>
+          <th scope="col">Status</th>
+            <th scope="col"></th>
+              <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+{{#each orderData}}
+    <tr>
+      <td scope="row">{{counter @index}}</td>
+          <td>{{ format  this.date }}</td>
+      <td>{{this.deliveryDetails.address}}</td>
+        <td>{{this.deliveryDetails.pincode}}</td>
+           <td>{{this.deliveryDetails.number}}</td>
+                <td>{{this.amount}}</td>
+              <td>{{this.paymentMethod}}</td>
+              <td>{{this.status}}</td>
+
+                <td> <a class="btn btn-sm btn-success ms-1"  type="submit" href="/order-products/{{this._id}}"  >View Items</a></td>
+                
+           {{#if cancel}}
+           <td></td>
+           {{else}}
+                 <td> <a class="btn btn-sm btn-danger ms-1"  type="submit" href="/cancel-order/{{this._id}}" onclick="return confirm('Are you want to cancel this Order?')" >Cancel </a></td>
+             {{/if}}
+              
+
+                       
+                           </td>
+
+    </tr>
+   {{/each}}
+  
+
+  </tbody>
+
+
+</table>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

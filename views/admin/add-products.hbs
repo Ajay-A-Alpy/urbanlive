@@ -1,0 +1,64 @@
+<section>
+  {{>admin-new}}
+</section>
+
+
+<section>
+  <div class="container " style="background-color:rgb(162, 130, 138);">
+    <div class="row pb-3">
+      <div class="col-md-3 login mx-auto pb-1">
+        <form class="text-center text-dark fw-bold" method="post" enctype="multipart/form-data"
+          action="/admin/add-products">
+          <h3 class="mt-3">ADD NEW PRODUCT</h3>
+          <div class="mt-3">
+            <label for="pname" class="form-label">Name</label>
+            <input type="text" class="form-control" id="pname" name="pname">
+          </div>
+          <div class="mt-3">
+            <label for="category" class="form-label me-3 text-dark">Category Plant: </label>
+            <select id="subcat" name="subcategory" class="form-control bg-secondary">
+              {{#each  categories}}
+              <option value="{{this.sub}}">{{this.sub}}</option>
+              {{/each}}
+            </select>
+          </div>
+
+
+
+
+
+            {{!-- <div class="mt-3">
+            <label for="category" class="form-label me-3 text-dark">Category Pots: </label>
+            <select id="subcat" name="subcategory" class="form-control bg-secondary">
+              {{#each pot}}
+              <option value="{{this.sub}}">{{this.sub}}</option>
+              {{/each}}
+            </select>
+          </div> --}}
+          <div class="mt-3">
+            <label for="description" class="form-label">Description-small</label>
+            <input type="text" class="form-control" id="description" name="description">
+          </div>
+          <div class="mt-3">
+            <label for="description" class="form-label">Description-main</label>
+            <input type="text" class="form-control" id="description2" name="description2">
+          </div>
+          <div class="mt-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" class="form-control" id="price" name="price">
+          </div>
+          <div class="mt-3">
+            <label for="offer" class="form-label">Offer</label>
+            <input type="text" class="form-control" id="offer" name="offer">
+          </div>
+          <div class="mt-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" id="offer" name="image">
+          </div>
+          <div><button type="submit" class="btn text-white mt-3" style="background-color:rgb(47, 70, 33) ;">Add
+              Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</section>

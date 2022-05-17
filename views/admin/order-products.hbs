@@ -1,0 +1,39 @@
+
+<section>
+    {{>admin-new}}
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+
+            {{#each orderProducts}}
+
+   <div class=" col-12  col-md-6 col-lg-4 mt-4 mb-3  ">
+ 
+  <div class="card  " style="width: 20rem;  ">
+   
+  <img src="/product-images/{{this.product._id}}.jpg" class="card-img-top img-fluid" alt="plants"></a>
+  <div class="card-body" style="overflow:hidden; word-wrap:break-word">
+    <h5 class="card-title">{{this.product.pname}}</h5>
+        <h6 class="card-title">{{this.product.price}}</h6>
+         <h6 class="card-title"> Qty-{{this.quantity}}</h6>
+    <p class="card-text fw-normal"> {{this.product.description}}</p>
+
+
+   
+  </div>
+
+</div>
+
+
+ </div>
+
+  {{/each}}
+
+
+            </div>
+            
+        </div>
+    </div>
+</section>

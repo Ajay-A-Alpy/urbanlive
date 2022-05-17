@@ -1,0 +1,73 @@
+{{>user-header}}
+
+<section>
+  <div class="container-fluid mt-2">
+        <div class="row">
+            <img src="/images/home4.jpg"  class="img-fluid shadow" alt="plants in home">
+        </div>
+  </div>
+  </div>
+
+
+  <div class="container-fluid  mt-2" style="background-color: rgb(48, 39, 41)">
+    <div class="row  text-white text-center fw-bold fs-2">
+      <h2>
+        MAKE YOUR HOME GREEN | START SHOPPING NOW
+      </h2>
+    </div>
+  </div>
+
+  <div class="row mt-2 ">
+    <div class="col-md-6 col-lg-6 text-center fw-bold fs-3 c "><img src="images/plant1.jpg" alt=""
+        class="img-fluid rounded-circle roundbox " style="width: 50%;"></div>
+    <div class="col-md-6 col-lg-6  text-center fw-bold fs-3  "> <img src="images/plant2.webp" alt=""
+        class="img-fluid rounded-circle roundbox" style="width: 50%;"> </div>
+    <div class="col-md-6 col-lg-6  text-center fw-bold fs-3  "><img src="images/offers.webp" alt=""
+        class="img-fluid rounded-circle roundbox" style="width: 50%;"></div>
+    <div class="col-md-6 col-lg-6  text-center fw-bold fs-3   "><img src="images/plant4.webp" alt=""
+        class="img-fluid rounded-circle roundbox" style="width: 50%;"></div>
+  </div>
+
+  <div class="container  mt-4" style="">
+    <div class="row  text-start fw-bold ">
+      <h4 class="text-center">
+      {{message}}
+      </h4>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="row   mt-4 gy-3">
+      {{#each pro}}
+      <div class=" col-md-12  col-lg-4  mt-4  mb-3 d-flex justify-content">
+        <div class="card shadow rounded h-100  cardeffect items" >
+          <a href="/item-view/{{this._id}}">
+            <img src="/product-images/{{this._id}}.jpg" class="card-img-top img-fluid " alt="plant "></a>
+          <div class="card-body" style="overflow:hidden; word-wrap:break-word">
+            <h5 class="card-title pname" >{{this.pname}}</h5>
+              {{#if discount}}
+            <span class="card-title fw-bold"> <strike class="text-danger">Rs.{{this.price}}</strike> </span>
+            {{else}}
+                 <span class="card-title"> Rs.{{this.price}}</span>
+                 {{/if}}
+            {{#if discount}}
+            <span class="card-title offer">{{this.discount}}%off</span>
+
+             <span class="card-title fs-4 fw-bold rupees">₹{{ findDisc  this.discount  this.price}}</span>
+
+
+            {{/if}}
+            <p class="card-text fw-normal"> {{this.description}}</p>
+            <div class="fs-6 fw-bold">{{this.offer}}</div>
+            <button onclick="addToCart('{{this._id}}')" class="btn text-white  mb-auto text-center d-block"
+              style="background-color: rgb(67, 81, 57);"> Add to Cart </button>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

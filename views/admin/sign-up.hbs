@@ -1,0 +1,72 @@
+<section>
+  <div class="container" style="background-color: rgb(162, 130, 138);">
+
+
+    <div class="row" style="background-color:rgb(104, 123, 92); height:10vh"></div>
+    <div class="row mb-5">
+
+      <div class="col-md-4"></div>
+
+      <div class="col-md-3 login mb-4">
+
+        <form class="text-center text-white" method="post" name="form1"  id="form1" onsubmit="return validate()"  action="/admin/signup">
+          <h3 class="mt-3">CREATE ADMIN ACCOUNT</h3>
+
+          <div class="mt-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="fname" name="fname">
+            <span class="text-danger bg-light fw-bold h6" id="fnamemsg"></span>
+          </div>
+
+          <div class="mt-3">
+            <label for="fname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname">
+              <span class="text-danger bg-light fw-bold h6" id="lnamemsg"></span>
+
+          </div>
+
+          <div class="mt-3">
+            <label for="exampleInputEmail1" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+             <span class="text-danger bg-light fw-bold h6" id="emailmsg"></span>
+               <div class="h6 text-danger  fw-bold bg-light mt-1"> {{message}}</div>  
+          </div>
+
+
+          <div class="mt-3">
+            <label for="fname" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="number" name="number">
+              <span class="text-danger  bg-light fw-bold h6" id="numbermsg"></span>
+
+          </div>
+
+          <div class="mb-4 mt-3 ">
+            <label for="exampleInputPassword1" class="form-label"> Enter your Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <span class="text-danger bg-light fw-bold h6" id="passwordmsg"></span>
+          </div>
+
+
+
+          <button type="submit" class="btn text-white" style="background-color:rgb(47, 70, 33) ;">Submit</button>
+      
+         
+          <a class="fw-bold " href="/admin/login" style="text-decoration: none;">
+            <h6 class="mt-5 text-dark fw-bold">Already have an account? Signin</h6>
+          </a>
+
+        </form>
+      </div>
+      <div class="col-md-3">
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script src="/javascripts/validation.js"></script>

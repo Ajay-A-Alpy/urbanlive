@@ -1,0 +1,38 @@
+
+<section>
+    {{>admin-new}}
+</section>
+
+<div class="container page  text-center" style="background-color: rgb(148, 175, 175);">
+    <h1 class="text-center mx-auto">CROP IMAGE</h1>
+    <div class="form-group container">
+      <label for="file">Select Image</label>
+      <input class="form-control box" accept="image/*" type="file" required id="file-input"  value="file">
+    </div>
+    <div class="box-2">
+      <div class="result"></div>
+    </div>
+    <!--rightbox-->
+    <div class="box-2 img-result hide">
+      <!-- result of crop -->
+      <img class="cropped" src="" alt="" />
+    </div>
+    <!-- input file -->
+    <div class="box">
+      <div class="options hide">
+        <label class=""> Width</label>
+        <input type="number" class="img-w w-25" value="300" min="100" max="1200"  />
+      </div>
+      <!-- save btn -->
+      <button class="btn save hide btn-primary">Crop</button>
+      <!-- download btn -->
+      <a href="" class="btn download hide btn-success" hidden>Download</a>
+
+    <form action="/crop-images" method="post">
+    <input type="text" value="" name="image" id="image" hidden>
+       <input type="text" value="{{user}}" name="user" hidden>
+    <button type="submit" class="btn btn-success">Save</button>
+    </form>
+
+    </div>
+  </div>

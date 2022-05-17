@@ -1,0 +1,76 @@
+<section>
+    {{>admin-new}}
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+
+         
+            <div class="">
+<table class="table table-white table-striped  mt-4 table-hover" id="myTable">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Username</th>
+             <th scope="col">image</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Mobile Number</th>
+       <th scope="col">Address</th>
+       <th scope="col">Modify options</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+{{#each userlist}}
+
+    <tr>
+      <th scope="row">{{counter @index}}</th>
+      <td>{{this.fname}}</td>
+        <td class="text-start">
+           {{#if this.photo}}
+                                <div class="m-b-25"> <img src="{{this.photo}}" class="img-fluid rounded-circle roundbox " alt="User-Profile-Image" style="height: 5rem"> </div>
+                                {{else}}
+                                 <div class="m-b-25"> <img src="/images/profile.png" class="img-fluid rounded-circle roundbox " alt="User-Profile-Image"  style="height: 5rem"> </div>
+                                {{/if}}
+        </td>
+        <td>{{this.email}}</td>
+           <td>{{this.number}}</td>
+               <td>{{this.address}}</td>
+
+            
+              
+                    <td>  
+
+                        {{#if this.blockStatus}}
+
+                         <a class="btn btn-sm btn-info ms-1"  type="submit" href="/admin/unblock-user/{{this._id}}" >Unblock</a>
+
+{{else}}
+             
+
+                        <a class="btn btn-danger btn-sm" href="/admin/block-user/{{this._id}}" onclick="return confirm('Are you want to block {{this.pname}}?')">Block<i class="bi bi-stop-circle"></i></a>       
+              
+                        {{/if}}
+
+                           </td>
+
+
+    </tr>
+   
+  {{/each}}
+  </tbody>
+
+
+</table>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

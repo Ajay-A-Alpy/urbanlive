@@ -1,0 +1,83 @@
+<section>
+    {{>admin-new}}
+</section>
+
+
+<header>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center fs-2 fw-bold">
+              WEEKLY REPORT
+          </div>
+        </div>
+    </div>
+</header>
+
+<section>
+
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+
+         
+            <div class="">
+<table class="table table-white table-striped  mt-4 table-hover" id="myTable">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Date</th>
+      <th scope="col">Place</th>
+      <th scope="col">Pincode</th>
+       <th scope="col">mobile</th>
+       <th scope="col">Amount</th>
+        <th scope="col">payment</th>
+          <th scope="col">Status</th>
+            <th scope="col"></th>
+             
+    </tr>
+  </thead>
+
+  <tbody>
+{{#each report}}
+    <tr>
+      <td scope="row">{{counter @index}}</td>
+          <td>{{ date  this.date}}</td>
+      <td>{{this.deliveryDetails.address}}</td>
+        <td>{{this.deliveryDetails.pincode}}</td>
+           <td>{{this.deliveryDetails.mobile}}</td>
+              <td> Rs.{{this.amount}}</td>
+              <td>{{this.paymentMethod}}</td>
+              <td>{{this.status}}</td>
+
+                <td> <a class="btn btn-sm btn-success ms-1"  type="submit" href="/admin/order-products/{{this._id}}"  >View products</a></td>
+                
+           
+                
+        
+         
+                       
+                           </td>
+
+    </tr>
+   {{/each}}
+  
+
+  </tbody>
+
+
+</table>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</section>

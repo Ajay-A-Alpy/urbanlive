@@ -1,0 +1,71 @@
+
+<section>
+    {{>admin-new}}
+</section>
+
+<section>
+    <div class="container" >
+        <div class="row ">
+
+         
+            <div class="col-md-12 p-0 ">
+<table class="  table-info table" id="myTable" class="display">
+  <thead style="">
+    <tr style="">
+      <th scope="col">NO:</th>
+      <th scope="col">DATE</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">PINCODE</th>
+       <th scope="col">MOBILE</th>
+       <th scope="col">AMOUNT</th>
+        <th scope="col">PAYMENT</th>
+          <th scope="col">STATUS</th>
+            <th scope="col">ITEMS</th>
+              <th scope="col"> UPDATE STATUS</th>
+    </tr>
+  </thead>
+
+  <tbody>
+{{#each orderData}}
+    <tr>
+      <td scope="row">{{counter @index}}</td>
+          <td>{{ date this.date}}</td>
+      <td>{{this.deliveryDetails.address}}</td>
+        <td>{{this.deliveryDetails.pincode}}</td>
+           <td>{{this.deliveryDetails.number}}</td>
+              <td>{{this.amount}}</td>
+              <td>{{this.paymentMethod}}</td>
+              <td>{{this.status}}</td>
+                <td> <a class="btn  btn-success ms-1 btn10 mb-4 pb-4"  type="submit" href="/admin/order-products/{{this._id}}">View</a></td>
+              <td>
+                  <form action="" method="post">
+  <select id="browsers" name="orderState" class="form-control">
+    <option value="Cancelled">Cancelled</option>
+    <option value="Shipped">Shipped</option>
+    <option value="Placed">Placed</option>
+        <option value="Returned">Returned</option>
+  </select>
+  <input type="text" name="orderId" value="{{this._id}}" hidden>
+ <button  class=" btn btn-primary btn-sm mb-3 mt-1 mx-auto"  type="submit"><i class="bi bi-pencil"></i></button>
+</form>
+</td>
+    </tr>
+   {{/each}}
+  </tbody>
+</table>
+            </div>
+        </div>
+
+        <div class="row ">
+          <div class="col-md-3 mx-auto ">
+
+              <ul class="pagination pagination-lg ">
+   {{#each arr}}
+    <li class="page-item"><a class="page-link" href="/admin/view-orders?page={{this}}">{{this}}</a></li>
+{{/each}}
+  </ul>
+
+          </div>
+        </div>
+    </div>
+</section>

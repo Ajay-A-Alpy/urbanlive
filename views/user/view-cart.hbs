@@ -1,0 +1,70 @@
+
+{{>user-header}}
+
+<section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 m-3 ">
+                <table class="table p-5">
+  <thead>
+    <tr>
+      <th scope="col">Sl no</th>
+      <th scope="col">Item</th>
+      <th scope="col">Title</th>
+         <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      {{!-- <th scope="col">Options</th> --}}
+    </tr>
+  </thead>
+
+  <tbody>
+      {{#each cartProducts}}
+
+    <tr>
+      
+      <th scope="row">{{counter @index}}</th>
+    
+      <td><img src="/product-images/{{this.product._id}}.jpg" alt="product image" style="width: 100px; height:100px"></td>
+      <td>{{this.product.pname}}</td>
+    
+      {{#if  this.product.discount}}
+         <td><strike>{{this.product.price}}</strike> <br>
+       <span class="offer1">{{this.product.discount}}%off</span>
+        <h5 class="fs-6 text-danger">{{ findDisc this.product.discount  this.product.price  }}</h5>
+      {{else}}
+        <td>{{this.product.price}}<br>
+       {{/if}}
+       </td>
+         <td>
+             <button class="btn btn-secondary" onclick="changeQuantity('{{this._id}}','{{this.product._id}}',-1,'{{../userId}}')" >-</button>
+             <span  class="fs-5 ms-1 me-1" id="{{this.product._id}}">{{this.quantity}}</span>
+             <button class="btn btn-secondary" onclick="changeQuantity('{{this._id}}','{{this.product._id}}',1,'{{../userId}}')">+</button>
+         </td>
+       <td><button class="btn btn-warning" onclick="cartItemDelete('{{this.product._id}}')">Remove</button></td>  
+    </tr>
+
+ {{/each}}
+
+
+  </tbody>
+
+
+</table>
+  {{#if cartProducts}}
+ <h2 class="fs-4 text-danger fw-bold text-center " style="font-family: Arial, Helvetica, sans-serif;">Total Rs.<span id="total" style="font-family: Arial, Helvetica, sans-serif;">{{total}}</span></h2>
+ <div class="text-center ">
+   
+     <a href="/place-order">
+<button class="btn btn-success">Place Order</button>
+ </a>
+{{else}}
+<h5 class="fs-5 text-bold"> No Items in Your cart.</h5>
+    
+{{/if}}
+ </div>
+
+            </div>
+        </div>
+    </div>
+</section>

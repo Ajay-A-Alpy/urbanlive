@@ -1,0 +1,86 @@
+<section>
+    {{>admin-new}}
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+
+         
+<div class="row my-3 w-25 mx-auto">
+    <a href="/admin/add-products" class="btn btn-success btn-sm"> ADD NEW ITEM <i class="bi bi-plus-square"></i></a>
+</div>
+
+
+
+
+
+
+
+
+            <div class="col-md-12">
+
+
+<table class="table table-info  table-striped  table-hover " id="myTable">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+       <th scope="col">Delivery</th>
+        <th scope="col">Description</th>
+       <th scope="col">Thumbnails</th>
+          <th scope="col">Modify options</th>
+
+    </tr>
+  </thead>
+
+
+
+  <tbody>
+{{#each products}}
+
+    <tr>
+      <td scope="row">{{counter @index}}</td>
+      <td>{{this.pname}}</td>
+        <td>{{this.subcategory}}</td>
+           <td>{{this.price}}</td>
+              <td>{{this.offer}}</td>
+              <td>{{this.description}}</td>
+            
+                <td><img style="width: 50px; height:50px" src="/product-images/{{this._id}}.jpg" alt="images"> <a class="btn btn-sm btn-info"  type="submit" href="/admin/add-thumbnails/{{this._id}}" ><i class="bi bi-plus-square-fill"></i></a>  </td>
+                    <td><a class="btn btn-primary btn-sm" href="/admin/edit-product/{{this._id}}"><i class="bi bi-pencil"></i> </a>            <a class="btn btn-sm btn-danger ms-1"  type="submit" href="/admin/delete-product/{{this._id}}" onclick="return confirm('Are you want to delete {{this.pname}}?')"> <i class="bi bi-trash-fill"></i></a></td>
+
+
+    </tr>
+   
+  {{/each}}
+  </tbody>
+
+
+</table>
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="row ">
+  <div class="col-md-3 mx-auto ">
+ 
+  <ul class="pagination pagination-lg">
+   {{#each arr}}
+    <li class="page-item"><a class="page-link" href="/admin/view-products?page={{this}}">{{this}}</a></li>
+{{/each}}
+  </ul>
+
+  </div>
+</div>
+
+    </div>
+</section>

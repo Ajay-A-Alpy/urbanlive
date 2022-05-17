@@ -1,0 +1,52 @@
+
+<div class="bg-info p-1">
+    <button class="btn btn-secondary text-white btn-sm  ms-3" id="back">Go Back</button>
+</div>
+
+<div class="container">
+    <div class="row h-100" style="background-color: aquamarine;">
+        <div class="col-md-12">
+            <h2 class="fw-bold text-center"> OFFER ZONE</h2>
+        </div>
+         </div>
+         <div class="row h-100" style="background-color: rgb(164, 226, 48);">
+             <h4>My Coupens</h4>
+        <div class="col-md-12 col-lg-6 ps-3">
+            <div class="card" style="width: 18rem;">
+                <img src="/images/coupon.png" class="card-img-top" alt="...">
+            </div>
+            {{#if  mycoupen}}
+
+            <div class="col-md-12 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/offer1.jpeg" class="card-img-top" alt="...">
+                      <h2 class=" text-center fs-5 text-light bg-success">Coupen code: {{mycoupen.code}}</h2>
+                </div>
+            </div>
+            {{else}}
+             <h2 class=" text-center fs-5 text-light bg-success">NO COUPENS AVAILABLE</h2>
+              {{/if}}
+
+              
+        </div>
+
+
+
+            <div class="col-md-6 col-lg-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/Refer-Earn.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="fw-bold text-center"> REFER AND EARN </h2>
+                            <h4 class="fw-bold text-center"> {{referalOffer.discount}}% discounts</h4>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="fw-bold text-center fs-5"> SHARE THIS LINK</h2>
+                </div>
+                 <div class="col-md-6">
+                    <a class="fw-bold text-center fs-5 bg-white" target="_blank" style="text-decoration: none;"> http://localhost:3000/signup?id={{ID}}</a>
+                </div>
+
+
+            </div>
+        </div>

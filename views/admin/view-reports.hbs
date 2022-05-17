@@ -1,0 +1,118 @@
+<section>
+    {{>admin-new}}
+</section>
+
+
+
+    
+
+
+<section>
+
+<div class="container" style="background-color: rgb(82, 100, 94);">
+  <div class="row d-flex justify-content-center">
+    
+    <div class="col-md-12 col-lg-6 ">
+ <h4 class="my-2 text-white">SEARCH  REPORTS</h4>
+
+         <form action="/admin/search-report" method="post">
+       <div class="mt-3 bg-info d-flex">
+                             <div class="bg-info w-50">
+                                  <label for="startDate" class="form-label">START DATE</label>
+                          <input type="date" class="form-control" id="startDate" name="startDate" required>
+                              </div>
+                    
+                    <div class=" bg-info w-50">
+                        <label for="endDate" class="form-label">END DATE</label>
+                        <input type="date" class="form-control" id="endDate" name="endDate" required>
+                    </div>
+
+                    </div>
+                     <div class="my-2 mx-auto">
+                      <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+
+                    
+</form>
+    </div>
+
+     <div class="col-lg-6">
+{{#if total}}
+       <div class="card" style="width: 18rem;">
+  <img src="/images/sale.png" class="card-img-top" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title fs-3 fw-bold rupees">₹{{total}}</h5>
+  
+  </div>
+</div>
+ {{/if}}
+  </div>
+                 
+
+
+
+  
+  </div>
+
+
+
+</div>
+</section>
+
+
+<section>
+  <div class="row">
+   
+    <div class="col-md-12 col-lg-12 text-center">
+
+      <table class="table table-white table-striped  mt-4 table-hover" id="myTable">
+  <thead class="bg-info">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Date</th>
+      <th scope="col">Place</th>
+      <th scope="col">Pincode</th>
+       <th scope="col">mobile</th>
+       <th scope="col">Amount</th>
+        <th scope="col">payment</th>
+          <th scope="col">Status</th>
+            <th scope="col"></th>
+             
+    </tr>
+  </thead>
+
+  <tbody>
+{{#each result}}
+    <tr>
+      <td scope="row">{{counter @index}}</td>
+          <td>{{ date this.date}}</td>
+      <td>{{this.deliveryDetails.address}}</td>
+        <td>{{this.deliveryDetails.pincode}}</td>
+           <td>{{this.deliveryDetails.number}}</td>
+              <td> Rs.{{this.amount}}</td>
+              <td>{{this.paymentMethod}}</td>
+              <td>{{this.status}}</td>
+
+                <td> <a class="btn btn-sm btn-success ms-1"  type="submit" href="/admin/order-products/{{this._id}}"  >View products</a></td>
+                
+           
+                
+        
+         
+                       
+                           </td>
+
+    </tr>
+   {{/each}}
+  
+
+  </tbody>
+
+
+</table>
+
+
+
+    </div>
+  </div>
+</section>
