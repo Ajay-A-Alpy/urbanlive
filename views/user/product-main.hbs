@@ -1,9 +1,9 @@
 {{>user-header}}
 <section>
     <div class="container">
-        <div class="row mt-5 vh-75 p-2" style="background-color: aquamarine;">
+        <div class="row mt-5 vh-75 p-2" style="background-color: white">
             {{#each productInfo}}
-            <div class="col-md-2 mt-5 p-5 col-1 " style="background-color: aqua;" id="thumbnails">
+            <div class="col-md-2 mt-5 p-5 col-1 " style="background-color:white;" id="thumbnails">
                 <div id="thumbnail1" style=" height:7rem ; width:7rem">
                          <img src="/product-images/{{this._id}}.jpg" class="card-img-top  img-thumbnail  w-75  img-fluid " alt=" " onclick="picEnlarger(this)"></a>
                 </div>
@@ -20,7 +20,7 @@
                         alt="" onclick="picEnlarger(this)" >
                 </div>
             </div>
-            <div class="col-md-5 pt-4  text-center" style="background-color: blueviolet;">
+            <div class="col-md-5 pt-4  text-center" style="background-color: white;">
 
 
                 <div id="img-container" style=" height:auto">
@@ -28,10 +28,7 @@
                         alt="plants" >
                 </div>
 
-                      {{!-- <div class="img-zoom-container text-center">
-  <img id="myimage" src="/product-images/{{this._id}}.jpg"  width="300" height="240" alt="Girl">
-  <div id="myresult" class="img-zoom-result"></div>
-    </div> --}}
+                     
 
                 <div class=" text-center">
                     <a href="/add-to-cart/{{this._id}}" class="btn text-white  mt-4 mb-4  "

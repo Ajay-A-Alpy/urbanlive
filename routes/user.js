@@ -5,7 +5,6 @@ const { response } = require('../app');
 var router = express.Router();
 var productHelper = require('../helpers/product-helpers');
 let userHelpers = require('../helpers/user-helpers');
-
 const async = require('hbs/lib/async');
 var client = require('twilio')(process.env.ACCOUNTS_ID, process.env.AUTH_TOKEN);
 var paypal = require('paypal-rest-sdk');
