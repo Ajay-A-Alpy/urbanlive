@@ -19,7 +19,7 @@ let referalOffer;
 let referValid;
 let referalApply = false;
 
-console.log(process.env)
+
 
 paypal.configure({
   'mode': 'sandbox', //sandbox or live
