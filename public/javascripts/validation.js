@@ -4,12 +4,14 @@
 
     function validate(){
      var fname=document.getElementById('fname').value
+     var lname=document.getElementById('lname').value
       var email=document.getElementById('email').value
        var number=document.getElementById('number').value
         var password=document.getElementById('password').value
+        let  letters= /^[a-zA-Z ]*$/;
     
 
-
+//first name
     
     if(fname==null){
     document.getElementById('fnamemsg').innerHTML=" **Name must be filled";
@@ -50,6 +52,44 @@
     else {
       document.getElementById('fnamemsg').innerHTML="";
     }
+
+
+    
+    if(!(fname.match(letters))){
+      document.getElementById('fnamemsg').innerHTML="**Name must be Alphabets";
+       document.form1.fname.focus();
+       return false;
+      }
+      else {
+        document.getElementById('fnamemsg').innerHTML="";
+      }
+
+      //Last name
+
+      
+    if(lname==""){
+    document.getElementById('lnamemsg').innerHTML=" Name must be filled";
+     document.form1.lname.focus();
+     return false;
+    }
+    
+    else {
+      document.getElementById('lnamemsg').innerHTML="";
+    }
+
+
+       
+    if(!lname.match(letters)){
+      document.getElementById('lnamemsg').innerHTML=" Name must be Alphabets";
+       document.form1.lname.focus();
+       return false;
+      }
+      
+      else {
+        document.getElementById('lnamemsg').innerHTML="";
+      }
+      
+    
     
     
     
@@ -81,7 +121,7 @@
       document.getElementById('emailmsg').innerHTML="";
     }
     
-    
+    //number checks
     if(number==""){
     document.getElementById('numbermsg').innerHTML="**Enter a Mobile Number";
      document.form1.number.focus();
