@@ -559,6 +559,7 @@ router.post('/place-order', async (req, res) => {
   let products = await userHelpers.getCartProductList(req.session.userId)
   userHelpers.placeOrder(user, req.body, products, req.session.orderAmt).then((orderId) => {
     req.session.orderId = orderId;
+
     if (req.body['payment-method'] === "COD") {
       res.json({ codStatus: true })
     }
@@ -656,7 +657,7 @@ router.get('/success', (req, res) => {
 
 
 router.get('/cancel', (req, res) => {
-  res.send('cancel')
+  res.render('user/cancel')
 })
 
 router.get('/add-address', verifyLogin, (req, res) => {
@@ -706,9 +707,10 @@ router.post('/verify-payment', verifyLogin, async function (req, res) {
       res.json({ status: true })
     }).catch(() => {
       res.json({ status: false })
+  
     })
   }).catch((err) => {
-    console.log(err)
+    res.json({ status: false })
   })
 
 })
@@ -718,6 +720,9 @@ router.get('/order-products/:id', verifyLogin, (async (req, res) => {
   let orderProducts = await userHelpers.getOrderProducts(req.params.id)
   res.render('user/order-products', { orderProducts, user })
 }));
+
+
+
 
 
 router.get('/view-profile', verifyLogin, async function (req, res) {

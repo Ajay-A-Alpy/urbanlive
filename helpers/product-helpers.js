@@ -2,6 +2,7 @@ var db=require('../config/connection')
 var collection=require('../config/collection')
 const { PRODUCT_COLLECTION } = require('../config/collection')
 const async = require('hbs/lib/async')
+const { ObjectId } = require('mongodb')
 var objectId=require('mongodb').ObjectId
 
 
@@ -151,10 +152,10 @@ getAllPotCategory:( ()=>{
     
         }),
 
-    deleteCategory: ((categoryName) => {
+    deleteCategory: ((categoryId) => {
 
         return new Promise((resolve, reject) => {
-            db.get().collection(collection.CATEGORY_COLLECTION).deleteOne({ sub: categoryName }).then((response) => {
+            db.get().collection(collection.CATEGORY_COLLECTION).deleteOne({ _id: ObjectId(categoryId) }).then((response) => {
 
                 resolve(response)
             })

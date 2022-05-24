@@ -1,28 +1,25 @@
-<section>
+<section class="bg-light">
     <div class="container" style="background-color: rgb(162, 130, 138);">
 
-
-       
         <div class="row mt-5">
 
-            <div class="col-md-4"></div>
+            <div class="col-md-12 col-lg-4 mx-auto login mt-5">
 
-            <div class="col-md-3 login mt-5">
-
-                <form class="text-center text-white" name="loginform" id="loginform" method="post" action="">
+                <form class="text-center text-white" name="form2" id="form2" method="post"  onsubmit="return validateLog()"  action="/admin/login">
                     <h3 class="mt-3"> ADMIN LOGIN</h3>
                     <div class="mt-3">
                         <div class="text-danger text-center fw-bold bg-light">{{message}}</div>
                         <label for="exampleInputEmail1" class="form-label">Enter your E-mail</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value="ajay@gmail.com">
-
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" >
+                         <span class="text-danger bg-light fw-bold h6" id="emailmsg"></span>
                     </div>
                     <div class="mb-4">
                         <label for="exampleInputPassword1" class="form-label"> Enter your Password</label>
-                        <input type="password" class="form-control" id="password" name="password" value="ajay123">
+                        <input type="password" class="form-control" id="password" name="password">
+                         <span class="text-danger bg-light fw-bold h6" id="passwordmsg"></span>
                     </div>
 
-                    <button onsubmit="return validate()" type="submit" class="btn text-white"
+                    <button type="submit" class="btn text-white"
                         style="background-color:rgb(47, 70, 33) ; ">Submit</button>
                     <h5 class="mt-2">or</h5>
                     <a href="/otplogin" type="submit" class="btn text-white mt-1"
@@ -37,7 +34,7 @@
 
 
             </div>
-            <div class="col-md-3"></div>
+          
 
         </div>
     </div>

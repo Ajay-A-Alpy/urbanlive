@@ -34,7 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(('/static',express.static(path.join(__dirname,'public'))))
 app.use(('/images',express.static(path.join(__dirname,'public/images'))))
 
-
 app.engine('hbs',hbs.engine({extname:'hbs',
 helpers:{counter:(index)=>index+1,
   format: function(date){
@@ -73,6 +72,11 @@ else{
 }
 
 
+})
+
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store')
+  next()
 })
 app.use('/', UserRouter);
 app.use('/admin', AdminRouter);

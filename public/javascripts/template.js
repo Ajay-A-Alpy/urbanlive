@@ -32,41 +32,7 @@
     });
   })(jQuery);
 
-  (function($) {
-    'use strict';
-    $(function() {
-      var todoListItem = $('.todo-list');
-      var todoListInput = $('.todo-list-input');
-      $('.todo-list-add-btn').on("click", function(event) {
-        event.preventDefault();
   
-        var item = $(this).prevAll('.todo-list-input').val();
-  
-        if (item) {
-          todoListItem.append("<li><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'/>" + item + "<i class='input-helper'></i></label></div><i class='remove ti-trash'></i></li>");
-          todoListInput.val("");
-        }
-  
-      });
-  
-      todoListItem.on('change', '.checkbox', function() {
-        if ($(this).attr('checked')) {
-          $(this).removeAttr('checked');
-        } else {
-          $(this).attr('checked', 'checked');
-        }
-  
-        $(this).closest("li").toggleClass('completed');
-  
-      });
-  
-      todoListItem.on('click', '.remove', function() {
-        $(this).parent().remove();
-      });
-  
-    });
-  })(jQuery);
-
 
   (function($) {
     'use strict';
@@ -167,98 +133,19 @@
 
   (function($) {
     'use strict';
-    $(function() {
-      if ($('.demo-tabs').length) {
-        $('.demo-tabs').pwstabs({
-          effect: 'none'
-        });
-      }
   
-      if ($('.hello_world').length) {
-        $('.hello_world').pwstabs();
-      }
-  
-      if ($('#rtl-tabs-1').length) {
-        $('#rtl-tabs-1').pwstabs({
-          effect: 'slidedown',
-          defaultTab: 2,
-          rtl: true
-        });
-      }
-  
-      if ($('#vertical-left').length) {
-        $('#vertical-left').pwstabs({
-          effect: 'slideleft',
-          defaultTab: 1,
-          containerWidth: '600px',
-          tabsPosition: 'vertical',
-          verticalPosition: 'left'
-        });
-      }
-  
-      if ($('#horizontal-left').length) {
-        $('#horizontal-left').pwstabs({
-          effect: 'slidedown',
-          defaultTab: 2,
-          containerWidth: '600px',
-          horizontalPosition: 'bottom'
-        });
-      }
-  
-      if ($('.tickets-tab').length) {
-        $('.tickets-tab').pwstabs({
-          effect: 'none'
-        });
-      }
-  
-    });
   })(jQuery);
 
   (function($) {
     'use strict';
     $(function() {
-      if ($('.demo-tabs').length) {
-        $('.demo-tabs').pwstabs({
-          effect: 'none'
-        });
-      }
+     
   
-      if ($('.hello_world').length) {
-        $('.hello_world').pwstabs();
-      }
+     
   
-      if ($('#rtl-tabs-1').length) {
-        $('#rtl-tabs-1').pwstabs({
-          effect: 'slidedown',
-          defaultTab: 2,
-          rtl: true
-        });
-      }
   
-      if ($('#vertical-left').length) {
-        $('#vertical-left').pwstabs({
-          effect: 'slideleft',
-          defaultTab: 1,
-          containerWidth: '600px',
-          tabsPosition: 'vertical',
-          verticalPosition: 'left'
-        });
-      }
   
-      if ($('#horizontal-left').length) {
-        $('#horizontal-left').pwstabs({
-          effect: 'slidedown',
-          defaultTab: 2,
-          containerWidth: '600px',
-          horizontalPosition: 'bottom'
-        });
-      }
   
-      if ($('.tickets-tab').length) {
-        $('.tickets-tab').pwstabs({
-          effect: 'none'
-        });
-      }
   
     });
   })(jQuery);
@@ -293,207 +180,12 @@
   (function($) {
     'use strict';
     $(function() {
-      if ($("#order-chart").length) {
-        var areaData = {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-          datasets: [
-            {
-              data: [175, 200, 130, 210, 40, 60, 25],
-              backgroundColor: [
-                'rgba(255, 193, 2, .8)'
-              ],
-              borderColor: [
-                'transparent'
-              ],
-              borderWidth:3,
-              fill: 'origin',
-              label: "services"
-            },
-            {
-              data: [175, 145, 190, 130, 240, 160, 200],
-              backgroundColor: [
-                'rgba(245, 166, 35, 1)'
-              ],
-              borderColor: [
-                'transparent'
-              ],
-              borderWidth:3,
-              fill: 'origin',
-              label: "purchases"
-            }
-          ]
-        };
-        var areaOptions = {
-          responsive: true,
-          maintainAspectRatio: true,
-          plugins: {
-            filler: {
-              propagate: false
-            }
-          },
-          scales: {
-            xAxes: [{
-              display: false,
-              ticks: {
-                display: true
-              },
-              gridLines: {
-                display: false,
-                drawBorder: false,
-                color: 'transparent',
-                zeroLineColor: '#eeeeee'
-              }
-            }],
-            yAxes: [{
-              display: false,
-              ticks: {
-                display: true,
-                autoSkip: false,
-                maxRotation: 0,
-                stepSize: 100,
-                min: 0,
-                max: 260
-              },
-              gridLines: {
-                drawBorder: false
-              }
-            }]
-          },
-          legend: {
-            display: false
-          },
-          tooltips: {
-            enabled: true
-          },
-          elements: {
-            line: {
-              tension: .45
-            },
-            point: {
-              radius: 0
-            }
-          }
-        }
-        var salesChartCanvas = $("#order-chart").get(0).getContext("2d");
-        var salesChart = new Chart(salesChartCanvas, {
-          type: 'line',
-          data: areaData,
-          options: areaOptions
-        });
-      }
+      
   
-      if ($("#sales-chart").length) {
-        var SalesChartCanvas = $("#sales-chart").get(0).getContext("2d");
-        var SalesChart = new Chart(SalesChartCanvas, {
-          type: 'bar',
-          data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-            datasets: [{
-                label: 'Offline Sales',
-                data: [480, 230, 470, 210, 330],
-                backgroundColor: '#8EB0FF'
-              },
-              {
-                label: 'Online Sales',
-                data: [400, 340, 550, 480, 170],
-                backgroundColor: '#316FFF'
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            layout: {
-              padding: {
-                left: 0,
-                right: 0,
-                top: 20,
-                bottom: 0
-              }
-            },
-            scales: {
-              yAxes: [{
-                display: true,
-                gridLines: {
-                  display: false,
-                  drawBorder: false
-                },
-                ticks: {
-                  display: false,
-                  min: 0,
-                  max: 500
-                }
-              }],
-              xAxes: [{
-                stacked: false,
-                ticks: {
-                  beginAtZero: true,
-                  fontColor: "#9fa0a2"
-                },
-                gridLines: {
-                  color: "rgba(0, 0, 0, 0)",
-                  display: false
-                },
-                barPercentage: 1
-              }]
-            },
-            legend: {
-              display: false
-            },
-            elements: {
-              point: {
-                radius: 0
-              }
-            }
-          },
-        });
-        document.getElementById('sales-legend').innerHTML = SalesChart.generateLegend();
-      }
+    
   
       if ($("#north-america-chart").length) {
-        var areaData = {
-          labels: ["Jan", "Feb", "Mar"],
-          datasets: [{
-              data: [100, 50, 50],
-              backgroundColor: [
-                "#71c016", "#8caaff", "#248afd",
-              ],
-              borderColor: "rgba(0,0,0,0)"
-            }
-          ]
-        };
-        var areaOptions = {
-          responsive: true,
-          maintainAspectRatio: true,
-          segmentShowStroke: false,
-          cutoutPercentage: 78,
-          elements: {
-            arc: {
-                borderWidth: 4
-            }
-          },      
-          legend: {
-            display: false
-          },
-          tooltips: {
-            enabled: true
-          },
-          legendCallback: function(chart) { 
-            var text = [];
-            text.push('<div class="report-chart">');
-              text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="me-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[0] + '"></div><p class="mb-0">Offline sales</p></div>');
-              text.push('<p class="mb-0">22789</p>');
-              text.push('</div>');
-              text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="me-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[1] + '"></div><p class="mb-0">Online sales</p></div>');
-              text.push('<p class="mb-0">94678</p>');
-              text.push('</div>');
-              text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="me-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[2] + '"></div><p class="mb-0">Returns</p></div>');
-              text.push('<p class="mb-0">12097</p>');
-              text.push('</div>');
-            text.push('</div>');
-            return text.join("");
-          },
-        }
+    
         var northAmericaChartPlugins = {
           beforeDraw: function(chart) {
             var width = chart.chart.width,
@@ -788,94 +480,24 @@
       ]
     }
   
-    var scatterChartOptions = {
-      scales: {
-        xAxes: [{
-          type: 'linear',
-          position: 'bottom'
-        }]
-      }
-    }
+    
     // Get context with jQuery - using jQuery's .get() method.
-    if ($("#barChart").length) {
-      var barChartCanvas = $("#barChart").get(0).getContext("2d");
-      // This will get the first returned node in the jQuery collection.
-      var barChart = new Chart(barChartCanvas, {
-        type: 'bar',
-        data: data,
-        options: options
-      });
-    }
   
-    if ($("#lineChart").length) {
-      var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
-      var lineChart = new Chart(lineChartCanvas, {
-        type: 'line',
-        data: data,
-        options: options
-      });
-    }
   
-    if ($("#linechart-multi").length) {
-      var multiLineCanvas = $("#linechart-multi").get(0).getContext("2d");
-      var lineChart = new Chart(multiLineCanvas, {
-        type: 'line',
-        data: multiLineData,
-        options: options
-      });
-    }
   
-    if ($("#areachart-multi").length) {
-      var multiAreaCanvas = $("#areachart-multi").get(0).getContext("2d");
-      var multiAreaChart = new Chart(multiAreaCanvas, {
-        type: 'line',
-        data: multiAreaData,
-        options: multiAreaOptions
-      });
-    }
   
-    if ($("#doughnutChart").length) {
-      var doughnutChartCanvas = $("#doughnutChart").get(0).getContext("2d");
-      var doughnutChart = new Chart(doughnutChartCanvas, {
-        type: 'doughnut',
-        data: doughnutPieData,
-        options: doughnutPieOptions
-      });
-    }
+   
   
-    if ($("#pieChart").length) {
-      var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
-      var pieChart = new Chart(pieChartCanvas, {
-        type: 'pie',
-        data: doughnutPieData,
-        options: doughnutPieOptions
-      });
-    }
+   
+   
   
-    if ($("#areaChart").length) {
-      var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
-      var areaChart = new Chart(areaChartCanvas, {
-        type: 'line',
-        data: areaData,
-        options: areaOptions
-      });
-    }
+    
   
-    if ($("#scatterChart").length) {
-      var scatterChartCanvas = $("#scatterChart").get(0).getContext("2d");
-      var scatterChart = new Chart(scatterChartCanvas, {
-        type: 'scatter',
-        data: scatterChartData,
-        options: scatterChartOptions
-      });
-    }
+ 
   
-    if ($("#browserTrafficChart").length) {
-      var doughnutChartCanvas = $("#browserTrafficChart").get(0).getContext("2d");
-      var doughnutChart = new Chart(doughnutChartCanvas, {
-        type: 'doughnut',
-        data: browserTrafficData,
-        options: doughnutPieOptions
-      });
-    }
+  
+  
+
+
+
   });

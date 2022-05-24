@@ -119,7 +119,7 @@
             <div class="card-body">
               <p class="card-title text-md-center text-xl-left">Users</p>
               <div
-                class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center me-2">
                 <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{userNos}} Nos</h3>
                <i class="bi bi-people-fill"style="font-size:2rem ;"></i>
               </div>
@@ -128,15 +128,15 @@
           </div>
         </div>
       </div>
-      <div class="row ">
-        <div class="col-md-6 grid-margin stretch-card h-50">
-          <div class="card">
-            <div class="card-body text-center">
+      <div class="row  ">
+        <div class="col-md-12 col-lg-6 grid-margin stretch-card h-50">
+          <div class="card h-75 ">
+            <div class="card-body text-center  h-75">
               <p class="card-title fs-2 text-dark">TOP PRODUCT <i class="bi bi-trophy-fill"style="font-size:2rem ;"></i></p>
 
               <div class="card shadow rounded  w-50 mx-auto ">
-                <a href="/item-view/{{top1._id}}">
-                  <img src="/product-images/{{top1._id}}.jpg" class="card-img-top img-fluid " alt="plant "></a>
+              
+                  <img src="/product-images/{{top1._id}}.jpg" class="card-img-top img-fluid " alt="plant ">
                 <div class="card-body" style="overflow:hidden; word-wrap:break-word">
                   <h5 class="card-title">{{top1.pname}}</h5>
                   <span class="card-title"> Rs.{{top1.price}}</span>
@@ -147,9 +147,9 @@
           </div>
         </div>
         <div class="col-md-12 col-lg-6 stretch-card">
-          <div class="card border-bottom-0 h-75">
+          <div class="card border-bottom-0 h-75 ">
                         <h5 class="text-white text-center bg-secondary">NUMBER OF TRANSACTIONS</h5>
-            <div style="width:35rem; height: 38rem;" class="text-center">
+            <div style="width:80%; height: auto;" class="text-center pt-5 ps-2">
               <canvas id="myChart"></canvas>
             </div>
  
@@ -196,20 +196,22 @@
 
       </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card " >
-             <div   class="text-center p-5"> 
-                 <h5 class="text-white text-center bg-secondary"> TOTAL SALE AMOUNT - PAYMENT TYPE WISE</h5>
-              <canvas id="myChart2"></canvas>
-            </div>
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-md-12 col-lg-12 mx-auto">
 
-            <div class="container">
-            <h5 class="text-white text-center bg-secondary">VIEW REPORTS</h5>
-        <div class="row ">
- 
-            <div class="col-md-4 fs-5 col-12  report">
+      <div class="card mx-auto" >
+             <div   class="text-center mx-auto" style="width:80%; height:auto"> 
+             <h5 class="text-white text-center bg-secondary"> TOTAL SALE AMOUNT - PAYMENT TYPE WISE</h5>
+              <canvas id="myChart2" ></canvas>
+              </div>
+
+        
+            <h5 class="text-white text-center bg-secondary w-75 mx-auto mt-4">VIEW REPORTS</h5>
+     
+              <div class="d-flex">
+
+                <div class="col-md-4 fs-5 col-12  report">
               <a href="/admin/weekly-report" class="text btn btn-info">WEEKLY  REPORT</a>  
             </div>
 
@@ -217,11 +219,13 @@
             <a href="/admin/monthly-report" class="text btn btn-info" >MONTHLY  REPORT</a> 
             </div>
 
-               <div class="col-md-4 fs-5 col-12 report">
-             <a href="/admin/yearly-report" class="text btn btn-info">  YEARLY REPORT</a>
+            <div class="col-md-4 fs-5 col-12 report">
+            <a href="/admin/yearly-report" class="text btn btn-info">  YEARLY REPORT</a>
             </div>
-        </div>
-        </div>
+   
+
+              </div>
+            
     </div>
           </div>
 

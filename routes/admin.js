@@ -189,14 +189,19 @@ router.get('/add-products', verifyLogin, async function (req, res, next) {
 
 router.post('/add-products', verifyLogin, function (req, res) {
   productHelper.addProduct(req.body, (id) => {
-    let Image = req.files.image
-    Image.mv('./public/product-images/' + id + '.jpg', (err, done) => {
-      if (!err)
-        res.redirect('/admin/add-products')
-      else {
-        console.log(err)
-      }
-    })
+    let Image = req.files?.image
+
+    if(Image){
+      Image.mv('./public/product-images/' + id + '.jpg', (err, done) => {
+        if (!err)
+          res.redirect('/admin/add-products')
+        else {
+          console.log(err)
+        }
+      })
+
+    }
+   
 
   })
 });
@@ -205,7 +210,7 @@ router.post('/add-products', verifyLogin, function (req, res) {
 router.get('/delete-product/:id', verifyLogin, function (req, res) {
   let proId = req.params.id;
   productHelper.deleteProduct(proId).then((response) => {
-    res.redirect('/admin')
+    res.redirect('/admin/view-products')
   })
 });
 
@@ -255,10 +260,10 @@ router.post('/add-category', function (req, res) {
   })
 })
 
-router.get('/delete-category/:name', verifyLogin, function (req, res) {
-  let categoryName = req.params.name
-  console.log(categoryName)
-  productHelper.deleteCategory(categoryName).then((response) => {
+router.get('/delete-category/:id', verifyLogin, function (req, res) {
+  let categoryId = req.params.id
+
+  productHelper.deleteCategory(categoryId).then((response) => {
     res.redirect('/admin/category')
   })
 })

@@ -1,13 +1,13 @@
 const chart=document.getElementById('myChart')
 const chart2=document.getElementById('myChart2')
 
-let razor=document.getElementById("razor").value
-let paypal=document.getElementById("paypal").value
-let cod=document.getElementById("cod").value
+let razor=document.getElementById("razor")?.value
+let paypal=document.getElementById("paypal")?.value
+let cod=document.getElementById("cod")?.value
 
-let razorAm=document.getElementById("razorAm").value
-let paypalAm=document.getElementById("paypalAm").value
-let codAm=document.getElementById("codAm").value
+let razorAm=document.getElementById("razorAm")?.value
+let paypalAm=document.getElementById("paypalAm")?.value
+let codAm=document.getElementById("codAm")?.value
 
 
 
