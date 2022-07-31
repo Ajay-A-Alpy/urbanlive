@@ -1,64 +1,83 @@
-<section class="bg-light">
-    <div class="container" style="background-color: rgb(162, 130, 138);">
+<section class="">
+  <div class="container" style="background-color:white">
 
-        <div class="row mt-5">
+    <div class="row mt-5">
 
-            <div class="col-md-12 col-lg-4 mx-auto login mt-5">
+      <div
+        class="col-md-12 col-lg-4 mx-auto login mt-5 rounded-3"
+        style="background-color:rgb(200,200,200)"
+      >
 
-                <form class="text-center text-white" name="form2" id="form2" method="post"  onsubmit="return validateLog()"  action="/admin/login">
-                    <h3 class="mt-3"> ADMIN LOGIN</h3>
-                    <div class="mt-3">
-                        <div class="text-danger text-center fw-bold bg-light">{{message}}</div>
-                        <label for="exampleInputEmail1" class="form-label">Enter your E-mail</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" >
-                         <span class="text-danger bg-light fw-bold h6" id="emailmsg"></span>
-                    </div>
-                    <div class="mb-4">
-                        <label for="exampleInputPassword1" class="form-label"> Enter your Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
-                         <span class="text-danger bg-light fw-bold h6" id="passwordmsg"></span>
-                    </div>
+        <form
+          class="text-center text-dark"
+          name="form2"
+          id="form2"
+          method="post"
+          onsubmit="return validateLog()"
+          action="/admin/login"
+        >
+          <h3 class="mt-3"> ADMIN LOGIN</h3>
+          <div class="mt-3">
+            <div
+              class="text-danger text-center fw-bold bg-light"
+            >{{message}}</div>
+            <label for="exampleInputEmail1" class="form-label">Enter your E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              name="email"
+            />
+            <span class="text-danger bg-light fw-bold h6" id="emailmsg"></span>
+          </div>
+          <div class="mb-4">
+            <label for="exampleInputPassword1" class="form-label">
+              Enter your Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+            />
+            <span
+              class="text-danger bg-light fw-bold h6"
+              id="passwordmsg"
+            ></span>
+          </div>
 
-                    <button type="submit" class="btn text-white"
-                        style="background-color:rgb(47, 70, 33) ; ">Submit</button>
-                    <h5 class="mt-2">or</h5>
-                    <a href="/otplogin" type="submit" class="btn text-white mt-1"
-                        style="background-color:rgb(47, 70, 33) ;">Get OTP</a>
-                    <a class="fw-bold " href="/admin/signup" style="text-decoration: none;">
-                        <h6 class="mt-5 text-dark fw-bold"> Create Admin Account Now</h6>
-                    </a>
+          <button
+            type="submit"
+            class="btn text-white w-100"
+            style="background-color:rgb(223, 163, 52) ; "
+          >Submit</button>
+          <h5 class="mt-2">or</h5>
+          <a
+            href="/otplogin"
+            type="submit"
+            class="btn text-white mt-1"
+            style="background-color:rgb(63, 159, 238) ;"
+          >Get OTP</a>
+          <a
+            class="fw-bold"
+            href="/admin/signup"
+            style="text-decoration: none;"
+          >
+            <h6 class="mt-5 text-dark fw-bold"> Create Admin Account Now</h6>
+          </a>
 
+        </form>
 
-                </form>
+      </div>
 
-
-
-            </div>
-          
-
-        </div>
     </div>
+  </div>
 </section>
 
 <script>
-    function validate() {
-
-        var email = document.getElementById('email').value
-        var password = document.getElementById('password').value
-
-        if (email == null) {
-            document.loginform.email.focus();
-            return false
-        }
-
-        if (password == null) {
-            document.loginform.password.focus();
-            return false
-        }
-
-        return true;
-
-    }
-
+  function validate() { var email = document.getElementById('email').value var
+  password = document.getElementById('password').value if (email == null) {
+  document.loginform.email.focus(); return false } if (password == null) {
+  document.loginform.password.focus(); return false } return true; }
 
 </script>

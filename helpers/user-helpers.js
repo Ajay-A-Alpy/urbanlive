@@ -388,7 +388,8 @@ module.exports = {
 
         return new Promise(async (resolve, reject) => {
             let totaldiscount = await db.get().collection(collection.CART_COLLECTION).aggregate([
-                { $match: { userID: userId } }, {
+                { $match: { userID: userId } },
+                 {
                     $unwind: '$products'
                 },
                 {
@@ -428,14 +429,10 @@ module.exports = {
                         discount: { $sum: { "$multiply": [{ $toInt: '$quantity' }, { $toInt: '$product.discount' }, { $toInt: '$product.price' }] } }
                     }
                 },
-
-
             ]).toArray()
   
             resolve(totaldiscount[0]?.discount)
         })
-
-
 
     }),
 

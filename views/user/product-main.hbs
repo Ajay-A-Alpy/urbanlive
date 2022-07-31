@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row mt-5 vh-75 p-2" style="background-color: white">
             {{#each productInfo}}
-            <div class="col-md-2 mt-5 p-5 col-1 " style="background-color:white;" id="thumbnails">
+            <div class="col-md-2 mt-5 p-5 col-1 col-sm-2 " style="background-color:white;" id="thumbnails">
                 <div id="thumbnail1" style=" height:7rem ; width:7rem">
                          <img src="/product-images/{{this._id}}.jpg" class="card-img-top  img-thumbnail  w-75  img-fluid " alt=" " onclick="picEnlarger(this)"></a>
                 </div>
@@ -20,24 +20,21 @@
                         alt="" onclick="picEnlarger(this)" >
                 </div>
             </div>
-            <div class="col-md-5 pt-4  text-center" style="background-color: white;">
-
+            <div class="col-md-5  col-sm-10  pt-4  text-center" style="background-color: white;">
 
                 <div id="img-container" style=" height:auto">
                     <img src="/product-images/{{this._id}}.jpg" id="mainpic" class="card-img-top  img-thumbnail  w-75  img-fluid"
                         alt="plants" >
                 </div>
 
-                     
-
                 <div class=" text-center">
-                    <a href="/add-to-cart/{{this._id}}" class="btn text-white  mt-4 mb-4  "
+                    <a onclick="addToCart('{{this._id}}')" class="btn text-white  mt-4 mb-4  "
                         style="background-color: rgb(67, 81, 57);">Add to
                         Cart</a>
                 </div>
             </div>
 
-            <div class="col-md-5 text-center p-5  col-12">
+            <div class="col-md-5 text-center p-5  col-sm-12 ">
                 <div class="text-start p-5">
                     <h5 class="fw-bold  text-center h2 ms-0 text-success">{{this.pname}}</h5>
                     <h2 class="h3 text-center">Rs.{{this.price}}</h2>

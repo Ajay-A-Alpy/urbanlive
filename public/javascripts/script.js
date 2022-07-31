@@ -95,13 +95,8 @@ $("#checkout-form").submit((e) => {
                 "color": "#3399cc"
             }
         }
-
-
         var rzp1 = new Razorpay(options);
         rzp1.open();
-
-
-
     }
            
 function verifyPayment(payment, order) {
@@ -153,6 +148,7 @@ $(document).ready(function () {
 
       if(!checked) {
         swal ( "Oops","Address not selected !","warning")
+
         return false;
       }
 

@@ -1,30 +1,68 @@
 <section>
-    <div class="container">
-        <div class="row" >
-<div class="  col-md-12 mx-auto  col-lg-4  login mt-5">
-<form class="text-center text-dark" name="form2" id="form2" method="post"  action="/login" onsubmit="return validateLog()">
-       <h3 class="mt-3">LOGIN</h3>
-  <div class="mt-3">
-   <div class="text-danger text-center fw-bold bg-light">{{message}}</div> 
-    <label for="exampleInputEmail1" class="form-label">Enter  E-mail </label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
-     <span class="text-danger bg-light fw-bold h6" id="emailmsg"></span>
-  </div>
-  <div class="mb-4 mt-4">
-    <label for="exampleInputPassword1" class="form-label"> Enter  Password</label>
-    <input type="password" class="form-control" id="password" name="password">
-    <a href="/forgot-password" style="text-decoration: none;">  <h5 class="h6 text-center"> Change/Forgot password?</h5></a>
-      <span class="text-danger bg-light fw-bold h6" id="passwordmsg"></span>
-  </div>
-  <div class="text-success text-center fw-bold bg-light">{{changePassword}}</div> 
-  <button  type="submit" class="btn text-white " style="background-color:rgb(47, 70, 33) ; ">Submit</button>
-  <h5 class="mt-2">or</h5>
-    <a href="/otplogin" type="submit" class="btn text-white mt-1 btn-sm" style="background-color:rgb(172, 86, 5) ;">Get OTP</a>
-<a class="fw-bold " href="/signup" style="text-decoration: none;" >
-      <h6 class="mt-5 text-dark fw-bold">New here? Create Your Account Now</h6>
-</a>
-</form>
-</div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mx-auto col-lg-4 login mt-5 rounded-3 bg-secondary">
+        <form
+          class="text-center text-white"
+          name="form2"
+          id="form2"
+          method="post"
+          action="/login"
+          onsubmit="return validateLog()"
+        >
+          <h3 class="mt-3 fs-2 fw-bold">LOGIN</h3>
+          <div class="mt-3">
+            <div
+              class="text-danger text-center fw-bold bg-light"
+            >{{message}}</div>
+            <label for="exampleInputEmail1" class="form-label">
+              E-MAIL
+            </label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              name="email"
+            />
+            <span class="text-danger bg-light fw-bold h6" id="emailmsg"></span>
+          </div>
+          <div class="mb-4 mt-4">
+            <label for="exampleInputPassword1" class="form-label">
+              PASSWORD</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+            />
+            <a href="/forgot-password" style="text-decoration: none;">
+              <h5 class="h6 text-center text-white"> Forgot password?</h5></a>
+            <span
+              class="text-danger bg-light fw-bold h6"
+              id="passwordmsg"
+            ></span>
+          </div>
+          <div
+            class="text-success text-center fw-bold bg-light"
+          >{{changePassword}}</div>
+          <button
+            type="submit"
+            class="btn text-dark fw-bold d-block w-100"
+            style="background-color:rgb(73, 213, 238) ; "
+          >SUBMIT</button>
+          <h5 class="mt-2">or</h5>
+          <a
+            href="/otplogin"
+            type="submit"
+            class="btn text-white mt-1 btn-sm"
+            style="background-color:rgb(233, 136, 44) ;"
+          > OTP LOGIN</a>
+          <a class="fw-bold" href="/signup" style="text-decoration: none;">
+            <h6 class="mt-5 text-white">New here? Create Your Account Now</h6>
+          </a>
+        </form>
+      </div>
     </div>
+  </div>
 </section>

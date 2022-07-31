@@ -3,11 +3,11 @@
 
 
 <section>
-    <div class="container p-5" style="background-color: rgb(229, 241, 241);">
+    <div class="container " style="background-color: white">
         <div class="row mt-5 gap-2 ">
         
-<div class="col-md-6 login  " style="background-color: rgb(173, 163, 151);">
-<h3 class="address mt-2 text-center">Delivery Address</h3>
+<div class="col-md-6 col-sm-12  rounded-3 " style="background-color: rgb(250, 246, 241);">
+<h3 class="address mt-2 text-center">DELIVERY ADDRESS</h3>
 
  <form method="post" id="checkout-form">
 
@@ -19,16 +19,16 @@
   </div>
 
    <p class="text-dark fw-normal fs-5  address p-1">{{this.name}},<br>{{this.address}}, <br>{{this.city}}<br>{{this.state}},{{this.pincode}},{{this.landmark}}</p>
-<a href="/delete-address/{{this._id}}" class="btn btn-sm btn-danger mb-2 mt-0"> Delete</a>
+<a href="/delete-address/{{this._id}}" class="btn btn-sm btn-danger mb-2 mt-0 w-25"> Delete</a>
 </div>
 {{/each}}
 
-<a href="/add-address" class="btn btn-success btn-sm"  >Add new address</a>
+<a href="/add-address" class="btn btn-success btn-sm w-25"  >Add Address</a>
 
 
 <div class="h-85 w-75 border border-0 mt-2 ms-4 p-3 text-start">
   
-    <h4 class="mt-2 fs-5 fw-bold" style="background-color: burlywood;"> CHOOSE A PAYMENT METHOD</h6>
+    <h4 class="mt-2 fs-5 fw-bold text-center py-1" style="background-color: burlywood;"> CHOOSE A PAYMENT METHOD</h6>
 
 <div class="form-check border-2 border border-white p-1" >
   <input class="form-check-input" type="radio" name="payment-method" value="COD" id="" checked>
@@ -62,15 +62,15 @@ Paypal Online Payment
 
 
 
-<div class="col-md-4  vh-75 px-2 mx-5 h-100 " style="background-color: rgb(235, 220, 231); height:20rem">
+<div class=" col-md-4 col-sm-12 vh-75 px-2 mx-5 h-100 rounded-3 " style="background-color: rgb(250, 246, 241); height:20rem">
 
 
 
 
 
 
- <div class="border border-4 ">
-     <h2 class="fs-5 fw-bold text-center mb-3"><u>100% SECURE PAYMENTS</u> </h2>
+ <div class="">
+     <h2 class="fs-5 fw-bold text-center mb-3 py-1"><u>100% SECURE PAYMENTS</u> </h2>
 
        <div class="fs-5 me-3 w-75 ">Sub Total <span class="fs-5 " style="">{{#if cartCount}} <span class="text-end w-25 ms-4 rupees" >:₹ {{total}}</span>{{/if}} </div> 
           <div class="fs-5 me-3 w-75 ">Discount<span class="fs-5" style="">{{#if cartCount}} <span class="text-end w-25 ms-4 rupees text-danger">:{{#if discountVal}} ₹-{{discountVal}}{{/if}}</span>{{/if}}</div>
@@ -92,13 +92,13 @@ Paypal Online Payment
 </form>
 
 
-<div class=" shadow text-center " style="background-color: rgb(118, 136, 136); p-4 ">
+<div class=" shadow text-center my-1" style="background-color: rgb(229, 238, 238); p-4 ">
   <form method="post" id="coupen-form" action="/coupen-check">
-<label for="" class="ms-2 text-white">ENTER COUPEN CODE</label>
+<label for="" class="ms-2 text-dark">ENTER COUPEN CODE</label>
 <h6 class="text-center text-danger bg-white">   {{coupenMsg}}</h6>
 <h6 class="text-center text-success bg-white">   {{coupenMsgSuccess}}</h6>
-<input type="text" name="userCoupen" id="usercode" class="form-control">
-<button class="btn btn-primary">ENTER</button>
+<input type="text" name="userCoupen" id="usercode" class="form-control w-75 mx-auto">
+<button class="btn btn-secondary btn-sm my-1">Apply</button>
 </form>
 </div>
 
